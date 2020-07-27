@@ -19,6 +19,9 @@ public class TicTacToe {
         };
 
         printBoard(board);
+        int move = promptMove();
+        makeMove(move, board);
+        printBoard(board);
     }
 
     public static void printBoard(char[][] board)
@@ -36,5 +39,49 @@ public class TicTacToe {
         System.out.println("Choose a space to move: 1-9:");
         int move = myObj.nextInt();
         return move;
+    }
+
+    public static void makeMove(int move, char[][] board)
+    {
+        switch (move) {
+            case 1:
+                board[0][0] = 'x';
+                break;
+
+            case 2:
+                board[0][1] = 'x';
+                break;
+
+            case 3:
+                board[0][2] = 'x';
+                break;
+
+            case 4:
+                board[1][0] = 'x';
+                break;
+
+            case 5:
+                board[1][1] = 'x';
+                break;
+
+            case 6:
+                board[1][2] = 'x';
+                break;
+
+            case 7:
+                board[2][0] = 'x';
+                break;
+
+            case 8:
+                board[2][1] = 'x';
+                break;
+
+            case 9:
+                board[2][2] = 'x';
+                break;
+        
+            default:
+                break;
+        }
     }
 }
