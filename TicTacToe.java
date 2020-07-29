@@ -38,6 +38,7 @@ public class TicTacToe {
         Scanner myObj = new Scanner(System.in);
         System.out.println("Choose a space to move: 1-9:");
         int move = myObj.nextInt();
+        myObj.close();
         return move;
     }
 
