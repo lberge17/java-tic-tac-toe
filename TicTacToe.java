@@ -20,8 +20,15 @@ public class TicTacToe {
 
         printBoard(board);
         int move = promptMove();
-        makeMove(move, board);
-        printBoard(board);
+        if (makeMove(move, board))
+        {
+            printBoard(board);
+        }
+        else 
+        {
+            System.out.println("Invalid move. Try again.");
+        }
+        
     }
 
     public static void printBoard(char[][] board)
@@ -42,47 +49,110 @@ public class TicTacToe {
         return move;
     }
 
-    public static void makeMove(int move, char[][] board)
+    public static boolean makeMove(int move, char[][] board)
     {
         switch (move) {
             case 1:
-                board[0][0] = 'x';
-                break;
+                if (board[0][0] == ' ')
+                {
+                    board[0][0] = 'x';
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
             case 2:
-                board[0][1] = 'x';
-                break;
+                if (board[0][1] == ' ')
+                {
+                    board[0][1] = 'x';
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
             case 3:
-                board[0][2] = 'x';
-                break;
+                if (board[0][2] == ' ')
+                {
+                    board[0][2] = 'x';
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
             case 4:
-                board[1][0] = 'x';
-                break;
+                if (board[1][0] == ' ')
+                {
+                    board[1][0] = 'x';
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
             case 5:
-                board[1][1] = 'x';
-                break;
+                if (board[1][1] == ' ')
+                {
+                    board[1][1] = 'x';
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
             case 6:
-                board[1][2] = 'x';
-                break;
-
+                if (board[1][2] == ' ')
+                {
+                    board[1][2] = 'x';
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
             case 7:
-                board[2][0] = 'x';
-                break;
+                if (board[2][0] == ' ')
+                {
+                    board[2][0] = 'x';
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
             case 8:
-                board[2][1] = 'x';
-                break;
+                if (board[2][1] == ' ')
+                {
+                    board[2][1] = 'x';
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
             case 9:
-                board[2][2] = 'x';
-                break;
+                if (board[2][2] == ' ')
+                {
+                    board[2][2] = 'x';
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
         
             default:
-                break;
+                return false;
         }
     }
 }
