@@ -174,15 +174,14 @@ public class TicTacToe {
 
     public static void cpuMove(char[][] board)
     {
-        Random n = new Random();
-        int move = n.nextInt(9) + 1;
-        if (makeMove(move, board, 'o')) {
-            cpuPositions.add(move);
-        }
-        else
-        {
-            cpuMove(board);
-        }
+        List<Integer> moves = Arrays.asList(5, 1, 3, 7, 9, 2, 4, 6, 8);
+
+        for(int move : moves) {
+            if (makeMove(move, board, 'o')) {
+                cpuPositions.add(move);
+                break;
+            }
+        } 
     }
 
     public static boolean gameOver(char[][] board)
