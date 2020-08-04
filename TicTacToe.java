@@ -6,8 +6,6 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class TicTacToe {
-    public static boolean gameOver = false;
-
     public static void main(String[] args)
     {
         char[][] board = {
@@ -26,7 +24,7 @@ public class TicTacToe {
     public static void playGame(char[][] board)
     {
         Scanner myObj = new Scanner(System.in);
-        while (!gameOver)
+        while (!gameOver(board))
         {
             printBoard(board);
             System.out.println("Choose a space to move: 1-9:");
@@ -167,5 +165,10 @@ public class TicTacToe {
         {
             cpuMove(board);
         }
+    }
+
+    public static boolean gameOver(char[][] board)
+    {
+        return false;
     }
 }
