@@ -5,6 +5,7 @@
 import java.util.Scanner;
 
 public class TicTacToe {
+    public static boolean gameOver = false;
 
     public static void main(String[] args)
     {
@@ -18,17 +19,27 @@ public class TicTacToe {
             }
         };
 
-        printBoard(board);
-        int move = promptMove();
-        if (makeMove(move, board))
+        playGame(board);
+    }
+
+    public static void playGame(char[][] board)
+    {
+        Scanner myObj = new Scanner(System.in);
+        while (!gameOver)
         {
             printBoard(board);
+            System.out.println("Choose a space to move: 1-9:");
+            int move = myObj.nextInt();
+            if (makeMove(move, board))
+            {
+                printBoard(board);
+            }
+            else 
+            {
+                System.out.println("Invalid move. Try again.");
+            }
         }
-        else 
-        {
-            System.out.println("Invalid move. Try again.");
-        }
-        
+        myObj.close();
     }
 
     public static void printBoard(char[][] board)
@@ -38,15 +49,6 @@ public class TicTacToe {
         System.out.println(board[1][0] + "|" + board[1][1] + "|" + board[1][2]);
         System.out.println("-+-+-");
         System.out.println(board[2][0] + "|" + board[2][1] + "|" + board[2][2]);
-    }
-
-    public static int promptMove()
-    {
-        Scanner myObj = new Scanner(System.in);
-        System.out.println("Choose a space to move: 1-9:");
-        int move = myObj.nextInt();
-        myObj.close();
-        return move;
     }
 
     public static boolean makeMove(int move, char[][] board)
