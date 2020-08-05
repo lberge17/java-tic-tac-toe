@@ -222,10 +222,6 @@ public class TicTacToe {
                 System.out.println("Cat's game!");
                 return true;
             }
-            else
-            {
-                return false;
-            }
         }
 
         return false;
